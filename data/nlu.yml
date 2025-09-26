@@ -1,0 +1,222 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+    - good morning
+    - good evening
+    - hey there
+    - hi there
+    - hello bot
+    - hi bot
+    - greetings
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you
+    - talk later
+    - catch you later
+    - bye bye
+    - see ya
+    - ciao
+    - farewell
+    - take care
+
+- intent: ask_fee
+  examples: |
+    - what's my fee status?
+    - show my fee details
+    - how much fee is pending?
+    - fee info for me
+    - fee details of student STU001
+    - check fee for Aarav Sharma
+    - show semester fee
+    - hostel fee status
+    - total fee due
+    - fee payment record
+
+- intent: ask_attendance
+  examples: |
+    - show my attendance
+    - attendance details
+    - how much attendance I have?
+    - attendance for student STU002
+    - semester 3 attendance
+    - overall attendance
+    - attendance record
+    - check attendance
+    - percentage of attendance
+    - attendance stats
+
+- intent: ask_results
+  examples: |
+    - show my results
+    - semester grades
+    - GPA details
+    - results for Aarav Sharma
+    - exam marks
+    - my grades
+    - academic results
+    - check results
+    - latest results
+    - show semester 2 results
+
+- intent: ask_hostel
+  examples: |
+    - what's my hostel room?
+    - hostel allocation
+    - room number
+    - hostel info
+    - hostel details
+    - check hostel status
+    - assigned hostel
+    - which block am I in?
+    - room allocation
+    - hostel for student STU003
+
+- intent: ask_library
+  examples: |
+    - library access status
+    - am I allowed in library?
+    - check library account
+    - library info
+    - library card status
+    - library active?
+    - library membership
+    - library record
+    - access library
+    - library details for student STU004
+
+- intent: ask_course
+  examples: |
+    - course details
+    - my course info
+    - which course am I in?
+    - course for student STU005
+    - current program info
+    - degree information
+    - course name and level
+    - course duration
+    - electives
+    - semester info
+
+- intent: ask_personal_info
+  examples: |
+    - my personal details
+    - show my profile
+    - personal info
+    - contact details
+    - student info
+    - DOB and address
+    - email and phone
+    - show profile info
+    - personal record
+    - personal data
+
+- intent: ask_advisor
+  examples: |
+    - who is my faculty advisor?
+    - advisor info
+    - faculty mentor
+    - check faculty advisor
+    - professor assigned to me
+    - academic advisor
+    - teacher details
+    - faculty info
+    - assigned professor
+    - supervisor info
+
+- intent: ask_thesis
+  examples: |
+    - thesis status
+    - my thesis title
+    - project update
+    - research status
+    - thesis progress
+    - thesis info
+    - check my thesis
+    - thesis details
+    - ongoing project
+    - thesis submission
+
+- intent: admin_overview
+  examples: |
+    - show admin dashboard
+    - overview of all students
+    - total students
+    - student summary
+    - how many students
+    - bachelors vs masters count
+    - summary report
+    - admin stats
+    - dashboard info
+    - institution overview
+
+- intent: student_list
+  examples: |
+    - list all students
+    - show student directory
+    - student names
+    - student IDs and courses
+    - all student records
+    - students enrolled
+    - student database
+    - student overview
+    - list students
+    - display students
+
+- intent: add_student
+  examples: |
+    - add a new student
+    - register student
+    - create student record
+    - new student enrollment
+    - insert student data
+    - add STU011
+    - include a student
+    - add student info
+    - register new student
+    - add student profile
+
+- intent: update_student
+  examples: |
+    - update student info
+    - change student details
+    - modify student record
+    - edit student data
+    - update STU001
+    - correct student info
+    - update profile
+    - update credits
+    - update semester
+    - fix student record
+
+- intent: delete_student
+  examples: |
+    - remove student
+    - delete student record
+    - delete STU002
+    - remove from database
+    - erase student info
+    - delete profile
+    - expunge student
+    - delete student data
+    - remove from ERP
+    - delete student account
+
+- intent: greet_admin
+  examples: |
+    - hi admin
+    - hello sir
+    - good morning admin
+    - hey admin
+    - greetings sir
+    - hi principal
+    - hello admin
+    - admin here
+    - welcome admin
+    - hi boss

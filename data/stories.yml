@@ -1,0 +1,63 @@
+version: "3.1"
+stories:
+
+
+- story: Student checks attendance
+  steps:
+  - intent: ask_attendance
+  - action: action_student_attendance
+
+- story: Student checks results
+  steps:
+  - intent: ask_results
+  - action: action_student_results
+
+- story: Student checks hostel
+  steps:
+  - intent: ask_hostel
+  - action: action_hostel_info
+
+- story: Student checks library
+  steps:
+  - intent: ask_library
+  - action: action_library_info
+
+- story: Student checks personal info
+  steps:
+  - intent: ask_personal_info
+  - action: action_personal_info
+
+- story: Student asks faculty advisor
+  steps:
+  - intent: ask_advisor
+  - action: action_faculty_advisor_info
+
+- story: Student asks thesis status
+  steps:
+  - intent: ask_thesis
+  - action: action_thesis_status
+
+- story: Admin overview
+  steps:
+  - intent: admin_overview
+  - action: action_admin_overview
+
+- story: Teacher views student list
+  steps:
+  - intent: student_list
+  - action: action_student_list
+
+- story: Admin adds student
+  steps:
+  - intent: add_student
+  - action: action_add_student
+
+- story: Admin updates student
+  steps:
+  - intent: update_student
+  - action: action_update_student
+
+- story: Admin deletes student
+  steps:
+  - intent: delete_student
+  - action: action_delete_student

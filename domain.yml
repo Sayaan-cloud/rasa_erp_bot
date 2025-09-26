@@ -1,0 +1,217 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_fee
+  - ask_attendance
+  - ask_results
+  - ask_hostel
+  - ask_library
+  - ask_course
+  - ask_personal_info
+  - ask_advisor
+  - ask_thesis
+  - admin_overview
+  - student_list
+  - add_student
+  - update_student
+  - delete_student
+  - greet_admin
+
+entities:
+  - student_id
+  - role
+  - name
+  - dob
+  - gender
+  - email
+  - phone
+  - address
+  - admission_year
+  - course_id
+  - course_name
+  - level
+  - duration_years
+  - semesters
+  - current_semester
+  - credits_completed
+  - electives
+  - fee_structure
+  - hostel_allocation
+  - library_access
+  - faculty_advisor
+  - thesis
+
+forms:
+  student_form:
+    required_slots:
+      - student_id
+      - role
+
+slot_mappings:
+  student_id:
+    - type: from_text
+  role:
+    - type: from_text
+
+slots:
+  student_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: student_id
+
+  role:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: role
+
+  name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: name
+
+  dob:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: dob
+
+  gender:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: gender
+
+  email:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: email
+
+  phone:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: phone
+
+  address:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: address
+
+  admission_year:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: admission_year
+
+  course_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: course_id
+
+  course_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: course_name
+
+  level:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: level
+
+  duration_years:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: duration_years
+
+  semesters:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: semesters
+
+  current_semester:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: current_semester
+
+  credits_completed:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: credits_completed
+
+  electives:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: electives
+
+  fee_structure:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: fee_structure
+
+  hostel_allocation:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: hostel_allocation
+
+  library_access:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: library_access
+
+  faculty_advisor:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: faculty_advisor
+
+  thesis:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: thesis
+
+responses:
+  utter_greet:
+    - text: "Hello! 👋 How can I assist you with the ERP system today?"
+  utter_goodbye:
+    - text: "Goodbye! 👋 Have a productive day!"
+  utter_default:
+    - text: "Sorry, I didn't understand that. Could you rephrase?"
+  utter_ask_student_id:
+    - text: "Please provide your student ID so I can fetch your details."
+  utter_ask_role:
+    - text: "Are you a student or an admin?"
+
+actions:
+  - action_student_fee
+  - action_student_attendance
+  - action_student_results
+  - action_hostel_info
+  - action_library_info
+  - action_course_info
+  - action_personal_info
+  - action_faculty_advisor_info
+  - action_thesis_status
+  - action_admin_overview
+  - action_student_list
+  - action_add_student
+  - action_update_student
+  - action_delete_student

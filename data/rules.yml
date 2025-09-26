@@ -1,0 +1,131 @@
+version: "3.1"
+
+# ---------------- Student Rules ----------------
+rules:
+
+- rule: Greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Ask student ID if unknown (for any student query)
+  condition:
+    - slot_was_set:
+        - student_id: null
+  steps:
+  - intent: ask_fee
+  - intent: ask_attendance
+  - intent: ask_results
+  - intent: ask_hostel
+  - intent: ask_library
+  - intent: ask_thesis
+  - action: student_form
+  - active_loop: student_form
+
+
+- rule: Handle student fee when ID known
+  condition:
+    - slot_was_set:
+        - student_id: not null
+  steps:
+  - intent: ask_fee
+  - action: action_student_fee
+
+- rule: Handle attendance when ID known
+  condition:
+    - slot_was_set:
+        - student_id: not null
+  steps:
+  - intent: ask_attendance
+  - action: action_student_attendance
+
+- rule: Handle results when ID known
+  condition:
+    - slot_was_set:
+        - student_id: not null
+  steps:
+  - intent: ask_results
+  - action: action_student_results
+
+- rule: Handle hostel info when ID known
+  condition:
+    - slot_was_set:
+        - student_id: not null
+  steps:
+  - intent: ask_hostel
+  - action: action_hostel_info
+
+- rule: Handle library info when ID known
+  condition:
+    - slot_was_set:
+        - student_id: not null
+  steps:
+  - intent: ask_library
+  - action: action_library_info
+
+- rule: Handle thesis info when ID known
+  condition:
+    - slot_was_set:
+        - student_id: not null
+  steps:
+  - intent: ask_thesis
+  - action: action_thesis_status
+
+- rule: Handle course info (no student ID needed)
+  steps:
+  - intent: ask_course
+  - action: action_course_info
+
+- rule: Submit student form
+  condition:
+    - active_loop: student_form
+  steps:
+  - action: student_form
+  - active_loop: null
+  - action: action_student_fee
+
+# ---------------- Admin Rules ----------------
+
+- rule: Greet admin
+  steps:
+  - intent: greet_admin
+  - action: utter_greet
+
+- rule: Admin dashboard
+  steps:
+  - intent: admin_overview
+  - action: action_admin_overview
+
+- rule: Admin managing students
+  steps:
+  - intent: student_list
+  - action: action_student_list
+
+- rule: Admin adding student
+  steps:
+  - intent: add_student
+  - action: action_add_student
+
+- rule: Admin updating student
+  steps:
+  - intent: update_student
+  - action: action_update_student
+
+- rule: Admin deleting student
+  steps:
+  - intent: delete_student
+  - action: action_delete_student
+
+# ---------------- Goodbye Rule ----------------
+
+- rule: Say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+# ---------------- Fallback ----------------
+
+- rule: Default fallback
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default

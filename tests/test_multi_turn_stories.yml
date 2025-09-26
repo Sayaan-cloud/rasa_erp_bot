@@ -1,0 +1,74 @@
+version: "3.1"
+stories:
+
+# ---------------- Student Multi-turn ----------------
+
+- story: Student checks fee and attendance
+  steps:
+  - intent: greet
+    user: "hi"
+  - action: utter_greet
+  - intent: ask_fee
+    user: "what's my fee status?"
+  - action: action_student_fee
+  - slot_was_set:
+    - student_id: "STU001"
+  - intent: ask_attendance
+    user: "show my attendance"
+  - action: action_student_attendance
+
+- story: Student checks results and hostel
+  steps:
+  - intent: ask_results
+    user: "show my results"
+  - action: action_student_results
+  - slot_was_set:
+    - student_id: "STU002"
+  - intent: ask_hostel
+    user: "what's my hostel room?"
+  - action: action_hostel_info
+
+- story: Student checks library and faculty advisor
+  steps:
+  - intent: ask_library
+    user: "library access status?"
+  - action: action_library_info
+  - slot_was_set:
+    - student_id: "STU003"
+  - intent: ask_advisor
+    user: "who is my faculty advisor?"
+  - action: action_faculty_advisor_info
+
+- story: Student asks thesis status then goodbye
+  steps:
+  - intent: ask_thesis
+    user: "what's the thesis status?"
+  - action: action_thesis_status
+  - slot_was_set:
+    - student_id: "STU004"
+  - intent: goodbye
+    user: "bye"
+  - action: utter_goodbye
+
+# ---------------- Admin Multi-turn ----------------
+
+- story: Admin manages student data
+  steps:
+  - intent: admin_overview
+    user: "show admin dashboard"
+  - action: action_admin_overview
+  - intent: student_list
+    user: "list all students"
+  - action: action_student_list
+  - intent: update_student
+    user: "update student info"
+  - action: action_update_student
+  - intent: add_student
+    user: "add a new student"
+  - action: action_add_student
+  - intent: delete_student
+    user: "remove student"
+  - action: action_delete_student
+  - intent: goodbye
+    user: "thanks, bye"
+  - action: utter_goodbye

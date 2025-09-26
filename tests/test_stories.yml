@@ -1,0 +1,125 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+version: "3.1"
+stories:
+
+# ---------------- Student Queries ----------------
+
+- story: Test greet
+  steps:
+  - intent: greet
+    user: "hi"
+  - action: utter_greet
+
+- story: Test student fee query
+  steps:
+  - intent: ask_fee
+    user: "what's my fee status?"
+  - action: action_student_fee
+  - slot_was_set:
+    - student_id: "STU001"
+
+- story: Test student attendance
+  steps:
+  - intent: ask_attendance
+    user: "show my attendance"
+  - action: action_student_attendance
+  - slot_was_set:
+    - student_id: "STU002"
+
+- story: Test student results
+  steps:
+  - intent: ask_results
+    user: "show my results"
+  - action: action_student_results
+  - slot_was_set:
+    - student_id: "STU003"
+
+- story: Test hostel info
+  steps:
+  - intent: ask_hostel
+    user: "what's my hostel room?"
+  - action: action_hostel_info
+  - slot_was_set:
+    - student_id: "STU004"
+
+- story: Test library info
+  steps:
+  - intent: ask_library
+    user: "library access status?"
+  - action: action_library_info
+  - slot_was_set:
+    - student_id: "STU005"
+
+- story: Test course info
+  steps:
+  - intent: ask_course
+    user: "my course details"
+  - action: action_course_info
+  - slot_was_set:
+    - student_id: "STU006"
+
+- story: Test personal info
+  steps:
+  - intent: ask_personal_info
+    user: "show my profile"
+  - action: action_personal_info
+  - slot_was_set:
+    - student_id: "STU007"
+
+- story: Test faculty advisor
+  steps:
+  - intent: ask_advisor
+    user: "who is my faculty advisor?"
+  - action: action_faculty_advisor_info
+  - slot_was_set:
+    - student_id: "STU008"
+
+- story: Test thesis status
+  steps:
+  - intent: ask_thesis
+    user: "what's the thesis status?"
+  - action: action_thesis_status
+  - slot_was_set:
+    - student_id: "STU009"
+
+# ---------------- Admin Queries ----------------
+
+- story: Test admin overview
+  steps:
+  - intent: admin_overview
+    user: "show admin dashboard"
+  - action: action_admin_overview
+
+- story: Test student list
+  steps:
+  - intent: student_list
+    user: "list all students"
+  - action: action_student_list
+
+- story: Test add student
+  steps:
+  - intent: add_student
+    user: "add a new student"
+  - action: action_add_student
+
+- story: Test update student
+  steps:
+  - intent: update_student
+    user: "update student info"
+  - action: action_update_student
+
+- story: Test delete student
+  steps:
+  - intent: delete_student
+    user: "remove student"
+  - action: action_delete_student
+
+# ---------------- Goodbye ----------------
+
+- story: Test goodbye
+  steps:
+  - intent: goodbye
+    user: "bye"
+  - action: utter_goodbye
